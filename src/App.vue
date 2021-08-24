@@ -1,10 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <NavBar />
+
+  <LatestFigures />
+
+  <div class="container">
+    <router-view />
   </div>
-  <router-view/>
+
+  <Footer />
 </template>
+
+<script setup>
+import Footer from "@/components/Footer.vue";
+import LatestFigures from "@/components/Latest-Figures.vue";
+import NavBar from "@/components/Nav-Bar.vue";
+
+</script>
 
 <style>
 #app {
@@ -15,16 +26,46 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
+.big-button {
+  background-color: #0f53af;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: medium;
   font-weight: bold;
-  color: #2c3e50;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 35px;
+  margin-top: 1em;
+  width: 270px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.big-button:hover {
+  background-color: #5c90d8;
 }
+
+.small-button {
+  width: 80px;
+}
+
+body {
+  margin: 0;
+  background-color: #dadada;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    width: 500px;
+    height: fit-content;
+    padding-bottom: 1em;
+    background-color: white;
+    min-height: 65vh;
+}
+
+h1 {
+  padding-top: 0.5em;
+}
+
 </style>
